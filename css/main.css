@@ -4,6 +4,7 @@ html, body {
     background-color: #22223B;
     height: 100%;
     text-align: center;
+    font-family: 'Cutive Mono', monospace;
 }
 
 main {
@@ -14,6 +15,8 @@ main {
 
 h1 {
     color: #C9ADA7;
+    font-family: 'Sacramento';
+    font-size: 2.4em;
 }
 
 .nav {
@@ -21,6 +24,12 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-size: 1.2em;
+    font-family: 'Unica One', cursive;
+}
+
+.active {
+    color:#C9ADA7;
 }
 
 .menu-item {
@@ -45,15 +54,22 @@ li {
     cursor: pointer;
 }
 
-.dropdown-menu > a:hover {
+.menu-item:hover .dropdown-item {
     cursor: pointer;
     display: block;
 }
 
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+}
 
 .dropdown-item {
     display: none;
+    position: absolute;
 }
 
 @keyframes rotateX {
@@ -80,4 +96,12 @@ li {
 
 h2 {
     color: #9a8c98;
+    font-family: 'Rokkitt', serif;
+    font-size: 2em;
+    
+}
+
+h3 {
+    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
 }
