@@ -1,55 +1,79 @@
-const homeSection = document.getElementById('home-page');
-const projectsSection = document.getElementById('projects-page');
-const eduSection = document.getElementById('edu-page');
-const skillsSection = document.getElementById('skills-page');
+const pages = {
+  home : document.getElementById('home-page'),
+  projects : document.getElementById('projects-page'),
+  edu : document.getElementById('edu-page'),
+  skills : document.getElementById('skills-page')
+}
 
-const homeNav = document.getElementById('nav-home');
-const projectsNav = document.getElementById('nav-projects');
-const eduNav = document.getElementById('nav-edu');
-const skillsNav = document.getElementById('nav-skills');
+const nav = {
+  home : document.getElementById('nav-home'),
+  projects : document.getElementById('nav-projects'),
+  edu : document.getElementById('nav-edu'),
+  skills : document.getElementById('nav-skills')
+}
 
-homeSection.style.display = 'block';
-projectsSection.style.display = 'none';
-eduSection.style.display = 'none';
-skillsSection.style.display = 'none';
+pages.home.style.display = 'block';
+pages.projects.style.display = 'none';
+pages.edu.style.display = 'none';
+pages.skills.style.display = 'none';
+
+const findPrevPage = () => {
+  for (const p in pages) {
+    if (pages[p].style.display === 'block') return pages[p];
+  }
+}
+
+document.getElementById('logo').addEventListener('click', e => {
+  nav.home.classList.add('active');
+  nav.projects.classList.remove('active');
+  nav.edu.classList.remove('active');
+  nav.skills.classList.remove('active');
+  pages.home.style.display = 'block';
+  pages.projects.style.display = 'none';
+  pages.edu.style.display = 'none';
+  pages.skills.style.display = 'none';
+});
 
 document.getElementById('nav-home').addEventListener('click', e => {
-  homeNav.classList.add('active');
-  projectsNav.classList.remove('active');
-  eduNav.classList.remove('active');
-  skillsNav.classList.remove('active');
-  homeSection.style.display = 'block';
-  projectsSection.style.display = 'none';
-  eduSection.style.display = 'none';
-  skillsSection.style.display = 'none';
+  nav.home.classList.add('active');
+  nav.projects.classList.remove('active');
+  nav.edu.classList.remove('active');
+  nav.skills.classList.remove('active');
+  pages.home.style.display = 'block';
+  pages.projects.style.display = 'none';
+  pages.edu.style.display = 'none';
+  pages.skills.style.display = 'none';
 });
+
 document.getElementById('nav-projects').addEventListener('click', e => {
-  homeNav.classList.remove('active');
-  projectsNav.classList.add('active');
-  eduNav.classList.remove('active');
-  skillsNav.classList.remove('active');
-  homeSection.style.display = 'none';
-  projectsSection.style.display = 'block';
-  eduSection.style.display = 'none';
-  skillsSection.style.display = 'none';
+  nav.home.classList.remove('active');
+  nav.projects.classList.add('active');
+  nav.edu.classList.remove('active');
+  nav.skills.classList.remove('active');
+  pages.home.style.display = 'none';
+  pages.projects.style.display = 'block';
+  pages.edu.style.display = 'none';
+  pages.skills.style.display = 'none';
 });
+
 document.getElementById('nav-edu').addEventListener('click', e => {
-  homeNav.classList.remove('active');
-  projectsNav.classList.remove('active');
-  eduNav.classList.add('active');
-  skillsNav.classList.remove('active');
-  homeSection.style.display = 'none';
-  projectsSection.style.display = 'none';
-  eduSection.style.display = 'block';
-  skillsSection.style.display = 'none';
+  nav.home.classList.remove('active');
+  nav.projects.classList.remove('active');
+  nav.edu.classList.add('active');
+  nav.skills.classList.remove('active');
+  pages.home.style.display = 'none';
+  pages.projects.style.display = 'none';
+  pages.edu.style.display = 'block';
+  pages.skills.style.display = 'none';
 });
+
 document.getElementById('nav-skills').addEventListener('click', e => {
-  homeNav.classList.remove('active');
-  projectsNav.classList.remove('active');
-  eduNav.classList.remove('active');
-  skillsNav.classList.add('active');
-  homeSection.style.display = 'none';
-  projectsSection.style.display = 'none';
-  eduSection.style.display = 'none';
-  skillsSection.style.display = 'block';
+  nav.home.classList.remove('active');
+  nav.projects.classList.remove('active');
+  nav.edu.classList.remove('active');
+  nav.skills.classList.add('active');
+  pages.home.style.display = 'none';
+  pages.projects.style.display = 'none';
+  pages.edu.style.display = 'none';
+  pages.skills.style.display = 'block';
 });

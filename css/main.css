@@ -18,6 +18,7 @@ h1 {
     color: #C9ADA7;
     font-family: 'Sacramento';
     font-size: 2.6em;
+    cursor: pointer;
     /* text-shadow: 4px 4px 4px #fff; */
 }
 
@@ -99,6 +100,11 @@ header > ul, header > li{
     color: #9A8C98;
 }
 
+.fade-animation {
+    opacity: 1;
+    animation: fadeIn 1.5s linear;
+}
+
 @keyframes rotateX {
     0% {
       opacity: 0;
@@ -126,4 +132,29 @@ header > ul, header > li{
     .nav {
         flex-direction: column;
     }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
