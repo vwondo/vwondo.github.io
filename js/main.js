@@ -23,6 +23,20 @@ const findPrevPage = () => {
   }
 }
 
+const fadeOut = (element) => {
+  const fadeEffect = setInterval(() => {
+    if (!element.style.opacity) {
+      element.style.opacity = 1;
+    }
+    if (element.style.opacity > 0) {
+      element.style.opacity -= 0.1;
+    } else {
+      element.style.display = 'none';
+      clearInterval(fadeEffect);
+    }
+  }, 200);
+}
+
 document.getElementById('logo').addEventListener('click', e => {
   nav.home.classList.add('active');
   nav.projects.classList.remove('active');
@@ -34,7 +48,7 @@ document.getElementById('logo').addEventListener('click', e => {
   pages.skills.style.display = 'none';
 });
 
-document.getElementById('nav-home').addEventListener('click', e => {
+nav.home.addEventListener('click', e => {
   nav.home.classList.add('active');
   nav.projects.classList.remove('active');
   nav.edu.classList.remove('active');
@@ -45,7 +59,7 @@ document.getElementById('nav-home').addEventListener('click', e => {
   pages.skills.style.display = 'none';
 });
 
-document.getElementById('nav-projects').addEventListener('click', e => {
+nav.projects.addEventListener('click', e => {
   nav.home.classList.remove('active');
   nav.projects.classList.add('active');
   nav.edu.classList.remove('active');
@@ -56,7 +70,7 @@ document.getElementById('nav-projects').addEventListener('click', e => {
   pages.skills.style.display = 'none';
 });
 
-document.getElementById('nav-edu').addEventListener('click', e => {
+nav.edu.addEventListener('click', e => {
   nav.home.classList.remove('active');
   nav.projects.classList.remove('active');
   nav.edu.classList.add('active');
@@ -67,7 +81,7 @@ document.getElementById('nav-edu').addEventListener('click', e => {
   pages.skills.style.display = 'none';
 });
 
-document.getElementById('nav-skills').addEventListener('click', e => {
+nav.skills.addEventListener('click', e => {
   nav.home.classList.remove('active');
   nav.projects.classList.remove('active');
   nav.edu.classList.remove('active');
