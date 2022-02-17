@@ -17,6 +17,26 @@ pages.projects.style.display = 'none';
 pages.edu.style.display = 'none';
 pages.skills.style.display = 'none';
 
+const findPrevPage = () => {
+  for (const p in pages) {
+    if (pages[p].style.display === 'block') return pages[p];
+  }
+}
+
+const fadeOut = (element) => {
+  const fadeEffect = setInterval(() => {
+    if (!element.style.opacity) {
+      element.style.opacity = 1;
+    }
+    if (element.style.opacity > 0) {
+      element.style.opacity -= 0.1;
+    } else {
+      element.style.display = 'none';
+      clearInterval(fadeEffect);
+    }
+  }, 200);
+}
+
 document.getElementById('logo').addEventListener('click', e => {
   nav.home.classList.add('active');
   nav.projects.classList.remove('active');

@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #22223B;
+    background-color: #020314;
     height: 100%;
     text-align: center;
     font-family: 'Cutive Mono', monospace;
@@ -15,20 +15,22 @@ main {
 }
 
 h1 {
-    color: #C9ADA7;
+    color: #E39E52;
     font-family: 'Sacramento';
     font-size: 2.6em;
+    cursor: pointer;
     /* text-shadow: 4px 4px 4px #fff; */
 }
 
 h2 {
-    color: #9a8c98;
+    color: #D78E8B;
     font-family: 'Rokkitt', serif;
     font-size: 2em;
     
 }
 
 h3 {
+    color: #cfa5a4;
     font-size: 1em;
     font-family: 'Raleway', sans-serif;
 }
@@ -39,7 +41,7 @@ header > ul, header > li{
 }
 
 .nav {
-    color: #9A8C98;
+    color: #F8C8C6;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,7 +52,7 @@ header > ul, header > li{
 }
 
 .active {
-    color:#C9ADA7;
+    color:#D78E8B;
 }
 
 .nav li  {
@@ -72,8 +74,12 @@ header > ul, header > li{
 }
 
 .menu-item:hover, .dropdown-item:hover, .menu-item:hover a {
-    color: #f2e9e4;
+    color: #FFF6EC ;
     cursor: pointer;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
 }
 
 .menu-item:hover .dropdown-menu {
@@ -90,13 +96,18 @@ header > ul, header > li{
     float: none;
     display: block;
     text-decoration: none;
-    color: #9A8C98;
+    color: #F8C8C6;
     position: relative;
 }
 
 .nav li a {
     text-decoration: none;
-    color: #9A8C98;
+    color: #F8C8C6;
+}
+
+.fade-animation {
+    opacity: 1;
+    animation: fadeIn 1s linear;
 }
 
 @keyframes rotateX {
@@ -114,10 +125,11 @@ header > ul, header > li{
   }
 
 .main-section {
-    width: 80vw;
-    background-color: #4a4e69;
+    width: 60vw;
+    background-color: #3E3E58;
     margin-top: 2em;
-    color: #f2e9e4;
+    margin-bottom: 4em;
+    color: #FFF6EC;
     text-align: left;
     padding: 10px 5% 10px 5%;
 }
@@ -126,4 +138,29 @@ header > ul, header > li{
     .nav {
         flex-direction: column;
     }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
