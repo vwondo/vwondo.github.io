@@ -105,10 +105,10 @@ header > ul, header > li{
     color: #F8C8C6;
 }
 
-.fade-animation {
+/* .fade-animation {
     opacity: 1;
     animation: fadeIn 1s linear;
-}
+} */
 
 @keyframes rotateX {
     0% {
@@ -140,7 +140,7 @@ header > ul, header > li{
     }
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
@@ -163,4 +163,4 @@ header > ul, header > li{
 @-ms-keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
-}
+} */
